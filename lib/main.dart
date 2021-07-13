@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruitmarket/Splash_Screen.dart';
 
-import 'Mainpage/MainHomePage/market_Screen.dart';
-
 void main() {
   runApp(MyApp());
 }
@@ -18,3 +16,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+//test
