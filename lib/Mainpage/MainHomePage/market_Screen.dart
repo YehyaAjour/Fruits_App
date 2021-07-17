@@ -12,221 +12,223 @@ class _MarketScreenState extends State<MarketScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: 160.0,
-            child: Stack(
-              children: <Widget>[
-                Container(
-                  color: Color(0xff69A03A),
-                  width: MediaQuery.of(context).size.width,
-                  height: 100.0,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Text(
-                          "Fruit Market",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: "Poppins"),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 160.0,
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    color: Color(0xff69A03A),
+                    width: MediaQuery.of(context).size.width,
+                    height: 100.0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Text(
+                            "Fruit Market",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: "Poppins"),
+                          ),
                         ),
-                      ),
-                      IconButton(
-                        icon: Icon(
-                          Icons.notifications,
-                          color: Colors.white,
+                        IconButton(
+                          icon: Icon(
+                            Icons.notifications,
+                            color: Colors.white,
+                          ),
+                          onPressed: () {},
                         ),
-                        onPressed: () {},
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-                Positioned(
-                  top: 80.0,
-                  left: 0.0,
-                  right: 0.0,
-                  child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20.0),
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          prefixIcon: Icon(
-                            Icons.search,
-                            color: Colors.grey,
-                          ),
-                          hintText: "Search",
-                          focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xff69A03A),
-                            ),
-                          ),
-                          border: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Color(0xff69A03A),
-                            ),
+                  Positioned(
+                    top: 80.0,
+                    left: 0.0,
+                    right: 0.0,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 20.0),
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey,
+                                offset: Offset(1.0, 10.2),
+                                blurRadius: 5.2,
+                              )
+                            ],
                             borderRadius: BorderRadius.circular(10),
+                            color: Colors.white),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              prefixIcon: Icon(
+                                Icons.search,
+                                color: Colors.grey,
+                              ),
+                              hintText: "Search",
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0xff69A03A),
+                                ),
+                              ),
+                              border: InputBorder.none
+                              // OutlineInputBorder(
+                              //   borderSide: BorderSide(
+                              //     color: Color(0xff69A03A),
+                              //   ),
+                              //   borderRadius: BorderRadius.circular(10),
+                              // ),
+                              ),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        index = 1;
+                      });
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 90,
+                      decoration: BoxDecoration(
+                        color:
+                            index == 1 ? Color(0xffCC7D00) : Colors.transparent,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Vegetables',
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontSize: 14,
+                            color:
+                                index == 1 ? Colors.white : Color(0xff989898),
                           ),
                         ),
                       ),
                     ),
                   ),
-                )
-              ],
-            ),
-          ),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      index = 1;
-                    });
-                  },
-                  child: Container(
-                    height: 60,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: index == 1 ? Color(0xffCC7D00) : Colors.white,
+                  SizedBox(
+                    width: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        index = 2;
+                      });
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 90,
+                      decoration: BoxDecoration(
+                        color:
+                            index == 2 ? Color(0xffCC7D00) : Colors.transparent,
                         borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(1.0, 2.2),
-                            blurRadius: 1.2,
-                          )
-                        ]),
-                    child: Center(
-                      child: Text(
-                        'Vegetabels',
-                        style: TextStyle(
-                          color: index == 1 ? Colors.white : Colors.black,
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Fruits',
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontSize: 14,
+                            color:
+                                index == 2 ? Colors.white : Color(0xff989898),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      index = 2;
-                    });
-                  },
-                  child: Container(
-                    height: 60,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: index == 2 ? Color(0xffCC7D00) : Colors.white,
+                  SizedBox(
+                    width: 10,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        index = 3;
+                      });
+                    },
+                    child: Container(
+                      height: 30,
+                      width: 90,
+                      decoration: BoxDecoration(
+                        color:
+                            index == 3 ? Color(0xffCC7D00) : Colors.transparent,
                         borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(1.0, 2.2),
-                            blurRadius: 1.2,
-                          )
-                        ]),
-                    child: Center(
-                      child: Text(
-                        'Fruits',
-                        style: TextStyle(
-                          color: index == 2 ? Colors.white : Colors.black,
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Dry Fruits',
+                          style: TextStyle(
+                            fontFamily: "Poppins",
+                            fontSize: 14,
+                            color:
+                                index == 3 ? Colors.white : Color(0xff989898),
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      index = 3;
-                    });
-                  },
-                  child: Container(
-                    height: 60,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        color: index == 3 ? Color(0xffCC7D00) : Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey,
-                            offset: Offset(1.0, 2.2),
-                            blurRadius: 1.2,
-                          )
-                        ]),
-                    child: Center(
-                      child: Text(
-                        'Dry Fruits',
-                        style: TextStyle(
-                          color: index == 3 ? Colors.white : Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            color: Colors.red,
-            height: 200,
-            width: 200,
-            child: Center(
-              child: Text(index == 1
-                  ? 'Vegetabules'
-                  : index == 2
-                      ? 'Fruits'
-                      : 'Dry Fruit'),
+            SizedBox(
+              height: 20,
             ),
-          ),
-        ],
+            Container(
+              color: Colors.red,
+              height: 200,
+              width: 200,
+              child: Center(
+                child: Text(index == 1
+                    ? 'Vegetabules'
+                    : index == 2
+                        ? 'Fruits'
+                        : 'Dry Fruit'),
+              ),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        type: BottomNavigationBarType.fixed,
+        items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                color: Colors.red,
-              ),
-              label: 'sss'),
-          BottomNavigationBarItem(
-            label: 'sdd',
             icon: Icon(
               Icons.home,
-              color: Colors.red,
             ),
+            label: 'HOME',
           ),
           BottomNavigationBarItem(
-            label: 'fff',
             icon: Icon(
-              Icons.home,
-              color: Colors.red,
+              Icons.shopping_cart,
             ),
+            label: 'Shopping cart',
           ),
           BottomNavigationBarItem(
-            label: 'sad',
             icon: Icon(
-              Icons.home,
-              color: Colors.red,
+              Icons.favorite,
             ),
+            label: 'Favourite',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.account_circle_rounded,
+            ),
+            label: 'My Account',
           ),
         ],
       ),
