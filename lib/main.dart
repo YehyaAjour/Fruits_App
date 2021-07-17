@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fruitmarket/Mainpage/MainHomePage/market_Screen.dart';
 
 import 'package:fruitmarket/Splash_Screen.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      home: SplashScreen(),
+      home: MarketScreen(),
     );
   }
 }

@@ -30,24 +30,24 @@ Widget defaultTextFormField({
       ),
       suffixIcon: suffix != null
           ? IconButton(
-        onPressed: suffixPressed,
-            icon: Icon(
+              onPressed: suffixPressed,
+              icon: Icon(
                 suffix,
                 color: Color(0xff69A03A),
               ),
-          )
+            )
           : null,
       border: OutlineInputBorder(),
     ),
   );
 }
 
-
-Widget custumElevatedButton({@required Function functionOnPressed ,@required String text}) {
+Widget custumElevatedButton(
+    {@required Function functionOnPressed, @required String text}) {
   return Column(
     children: [
       SizedBox(
-        height: 50,
+        height: 30,
       ),
       SizedBox(
         width: 146,
@@ -55,10 +55,9 @@ Widget custumElevatedButton({@required Function functionOnPressed ,@required Str
         child: ElevatedButton(
           onPressed: functionOnPressed,
           style: ElevatedButton.styleFrom(primary: Color(0xff69A03A)),
-          child:  Text(
+          child: Text(
             text,
-            style:
-            TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ),
