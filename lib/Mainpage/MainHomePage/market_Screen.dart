@@ -183,83 +183,92 @@ class _MarketScreenState extends State<MarketScreen> {
             SizedBox(
               height: 20,
             ),
-            fruitTitle(), //this is fruit title Organic fruit
+            fruitTitle(),
+            Container(
+              height: 210,
+              child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => buildItem(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10,
+                      ),
+                  itemCount: 5),
+            ),
             SizedBox(
               height: 10,
             ),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                ],
-              ),
+            fruitTitle(),
+            Container(
+              height: 210,
+              child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => buildItem(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10,
+                      ),
+                  itemCount: 5),
             ),
             fruitTitle(),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                ],
-              ),
+            Container(
+              height: 210,
+              child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => buildItem(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10,
+                      ),
+                  itemCount: 5),
             ),
             fruitTitle(),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  buildItem(),
-                ],
-              ),
+            Container(
+              height: 210,
+              child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => buildItem(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10,
+                      ),
+                  itemCount: 5),
+            ),
+            fruitTitle(),
+            Container(
+              height: 210,
+              child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => buildItem(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10,
+                      ),
+                  itemCount: 5),
+            ),
+            fruitTitle(),
+            Container(
+              height: 210,
+              child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => buildItem(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10,
+                      ),
+                  itemCount: 5),
+            ),
+            fruitTitle(),
+            Container(
+              height: 210,
+              child: ListView.separated(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => buildItem(),
+                  separatorBuilder: (context, index) => SizedBox(
+                        width: 10,
+                      ),
+                  itemCount: 5),
             ),
           ],
         ),
@@ -308,12 +317,30 @@ Widget buildItem() {
       children: [
         Container(
           decoration: BoxDecoration(
-            color: Colors.blue,
+            // color: Colors.blue,
             borderRadius: BorderRadius.circular(20),
           ),
           height: 143,
           width: 118,
-          child: Image.asset("assets/images/Component 2 – 1dsa.png"),
+          child: Stack(
+            alignment: Alignment.topRight,
+            children: [
+              Image.asset("assets/images/Component 2 – 1dsa.png"),
+              Container(
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(20)),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 5, right: 5),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: IconButton(
+                        icon: Icon(Icons.favorite),
+                        // onPressed: () {},
+                      ),
+                    ),
+                  ))
+            ],
+          ),
         ),
         SizedBox(
           height: 5,
@@ -396,6 +423,9 @@ Widget fruitTitle() {
           ],
         ),
       ),
+      SizedBox(
+        height: 10,
+      )
     ],
   );
 }
