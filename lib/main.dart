@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruitmarket/Mainpage/MainHomePage/market_Screen.dart';
-
-import 'package:fruitmarket/Splash_Screen.dart';
+import 'package:fruitmarket/layout/mainpage/mainhomepage/market_Screen.dart';
 
 void main() {
   runApp(MyApp());

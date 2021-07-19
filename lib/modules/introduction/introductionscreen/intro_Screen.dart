@@ -2,8 +2,8 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
-import 'package:fruitmarket/components.dart';
-import 'package:fruitmarket/loginPage.dart';
+import 'package:fruitmarket/components/components.dart';
+import 'package:fruitmarket/modules/login/login_screen.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -88,25 +88,22 @@ class _IntroScreenState extends State<IntroScreen> {
             body: "Order is arrived at your Place",
             image: _buildImage('Component 3 – 1.png'),
             decoration: pageDecoration,
-            footer:
-
-                custumElevatedButton(functionOnPressed: () {
+            footer: custumElevatedButton(
+                functionOnPressed: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(builder: (_) => LoginPage()),
                   );
-                }, text: "Get Started"),
-
+                },
+                text: "Get Started"),
           ),
         ],
         showDoneButton: false,
         showNextButton: false,
         showSkipButton: false,
         dotsDecorator: DotsDecorator(
-
           activeColor: Color(0xff69A03A),
           color: Colors.grey,
           activeShape: RoundedRectangleBorder(
-
             borderRadius: BorderRadius.all(Radius.circular(25.0)),
           ),
         ),

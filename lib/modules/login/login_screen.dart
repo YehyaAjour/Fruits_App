@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fruitmarket/components.dart';
-
-import 'Mainpage/MainHomePage/market_Screen.dart';
+import 'package:fruitmarket/layout/mainpage/mainhomepage/market_Screen.dart';
+import 'package:fruitmarket/components/components.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -16,7 +15,7 @@ class _LoginPageState extends State<LoginPage> {
 
   var formKey = GlobalKey<FormState>();
 
-  bool  isPassword =  true;
+  bool isPassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -73,15 +72,14 @@ class _LoginPageState extends State<LoginPage> {
                         },
                         labelText: "Password",
                         prefix: Icons.lock,
-                        suffix: isPassword ? Icons.visibility:Icons.visibility_off,
-                      suffixPressed: (){
-                      setState(()
-                      {
-                       isPassword = !isPassword;
-                      });
-                      }
-
-                    ),
+                        suffix: isPassword
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                        suffixPressed: () {
+                          setState(() {
+                            isPassword = !isPassword;
+                          });
+                        }),
                     SizedBox(
                       height: 30,
                     ),
@@ -91,10 +89,9 @@ class _LoginPageState extends State<LoginPage> {
                       child: ElevatedButton(
                         onPressed: () {
                           if (formKey.currentState.validate()) {
-
-                           Navigator.of(context).push(
-                             MaterialPageRoute(builder: (_) => MarketScreen()),
-                           );
+                            Navigator.of(context).push(
+                              MaterialPageRoute(builder: (_) => MarketScreen()),
+                            );
                           }
                         },
                         style: ButtonStyle(

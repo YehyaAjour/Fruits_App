@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:fruitmarket/intro_Screen.dart';
+import 'package:fruitmarket/modules/introduction/introductionscreen/intro_Screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key key}) : super(key: key);
@@ -10,7 +10,8 @@ class SplashScreen extends StatefulWidget {
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin{
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   // AnimationController _animationController;
   // Animation<double> _animation;
 
@@ -30,10 +31,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
     // _animation.addListener(()=> this.setState((){}));
     // _animationController.forward();
 
-    Timer(Duration(seconds: 10), (){
-      Navigator.push(context, MaterialPageRoute(builder: (context) => IntroScreen()));
+    Timer(Duration(seconds: 10), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => IntroScreen()));
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,24 +44,24 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-
-          Center(child: Text("FRUIT MARKET", style: TextStyle(color: Colors.white, fontSize: 40.0, fontWeight: FontWeight.bold),)),
-
+          Center(
+              child: Text(
+            "FRUIT MARKET",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 40.0,
+                fontWeight: FontWeight.bold),
+          )),
           Align(
             alignment: Alignment.bottomCenter,
-          child:  Container(
-            width:MediaQuery.of(context).size.width,
-            height: 200,
-            child: Image.asset(
-
-              "assets/images/mix_fruit_png_11.png",
-              fit: BoxFit.cover,
-
-
-
-
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: 200,
+              child: Image.asset(
+                "assets/images/mix_fruit_png_11.png",
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
           )
         ],
       ),
