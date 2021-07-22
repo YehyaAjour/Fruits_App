@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fruitmarket/components/components.dart';
 
 class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key}) : super(key: key);
-
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
