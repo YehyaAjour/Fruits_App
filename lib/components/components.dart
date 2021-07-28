@@ -43,22 +43,27 @@ Widget defaultTextFormField({
   );
 }
 
-Widget custumElevatedButton(
-    {@required Function functionOnPressed, @required String text}) {
+Widget custumElevatedButton({
+  @required Function functionOnPressed,
+  @required String text,
+  double widthbutton,
+  double heightbutton,
+}) {
   return Column(
     children: [
       SizedBox(
         height: 30,
       ),
       SizedBox(
-        width: 146,
-        height: 48,
+        width: widthbutton != null ? widthbutton : 146,
+        height: heightbutton != null ? heightbutton : 48,
         child: ElevatedButton(
           onPressed: functionOnPressed,
           style: ElevatedButton.styleFrom(primary: Color(0xff69A03A)),
           child: Text(
             text,
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 14),
           ),
         ),
       ),
@@ -228,6 +233,27 @@ Widget myAccountItem(
           ],
         ),
       ),
+    ),
+  );
+}
+
+Widget textFormFiledVisa(
+    {@required double containerWidth,
+    @required Function onChangeFun,
+    FocusNode focusnode}) {
+  return Container(
+    width: containerWidth,
+    height: 45,
+    child: TextFormField(
+      style: TextStyle(
+        fontSize: 15,
+      ),
+      decoration: InputDecoration(
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(7)),
+          counterText: ""),
+      onChanged: onChangeFun,
+      focusNode: focusnode != null ? focusnode : null,
+      maxLength: 4,
     ),
   );
 }
