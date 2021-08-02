@@ -71,7 +71,10 @@ Widget custumElevatedButton({
   );
 }
 
-Widget buildItem() {
+Widget buildItem({
+  Function functionFavourite,
+  Color iconColor,
+}) {
   return Container(
     decoration: BoxDecoration(
         //color: Colors.green,
@@ -99,8 +102,11 @@ Widget buildItem() {
                     child: CircleAvatar(
                       backgroundColor: Colors.white,
                       child: IconButton(
-                        icon: Icon(Icons.favorite),
-                        // onPressed: () {},
+                        icon: Icon(
+                          Icons.favorite,
+                          color: iconColor,
+                        ),
+                        onPressed: functionFavourite,
                       ),
                     ),
                   ))

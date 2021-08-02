@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fruitmarket/layout/mainpage/mainhomepage/market_Screen.dart';
+import 'package:fruitmarket/layout/market_Screen.dart';
 import 'package:fruitmarket/components/components.dart';
 
 class LoginPage extends StatefulWidget {

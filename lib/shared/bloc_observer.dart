@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fruitmarket/layout/market_Screen.dart';
-import 'package:fruitmarket/modules/introduction/splashscreen/Splash_Screen.dart';
-
-void main() {
-  Bloc.observer = MyBlocObserver();
-  runApp(MyApp());
-}
 
 class MyBlocObserver extends BlocObserver {
   @override
@@ -33,16 +25,3 @@ class MyBlocObserver extends BlocObserver {
     print('onClose -- ${bloc.runtimeType}');
   }
 }
-
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: SplashScreen(),
-    );
-  }
-}
-//test

@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen>
     // _animation.addListener(()=> this.setState((){}));
     // _animationController.forward();
 
-    Timer(Duration(seconds: 10), () {
+    Timer(Duration(seconds: 5), () {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => IntroScreen()));
     });
